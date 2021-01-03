@@ -1,0 +1,29 @@
+var img = new SimpleImage("chapel.png");
+
+//create function to change pixel to black
+function setBlack(pixel){
+    pixel.setRed(0);
+    pixel.setGreen(0);
+    pixel.setBlue(0);
+}
+
+//create function to add a border around an image
+function addBorder(img, widthThick, heightThick) {
+    //border thickness 10-pixels
+    var x = pixel.getX();
+    var y = pixel.getY();
+    var width = img.getWidth();
+    var height = img.getHeight();
+    if (x <= widthThick || x >= width - widthThick){
+        return pixel;
+    }
+    if (y <= heightThick || y >= height - heightThick){
+        return pixel;
+    }
+}
+for (var pixel of img.values()){
+    if (addBorder(img, 10, 10)){
+        setBlack(pixel);
+    }
+ }
+print (img);
