@@ -1,0 +1,10 @@
+//Code to change the blue in a Blue & White image to yellow
+var img = new SimpleImage("duke_blue_devil.png");
+for (var pixel of img.values()){
+    if (pixel.getRed() === 0) {
+        pixel.setRed(225);
+        pixel.setGreen(225);
+        pixel.setBlue(0);
+    }
+}
+print(img);
