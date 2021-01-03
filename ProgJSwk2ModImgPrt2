@@ -1,0 +1,17 @@
+//Programming Exercise Modifying Images Part 2
+//Function to swap Red & Green pixel values
+var img = new SimpleImage("usain.jpg");
+//run this to confirm start print(img.getPixel(0,0));
+print(img);
+
+function swapRG(pixel){
+    var oldR = pixel.getRed();
+    pixel.setRed(pixel.getGreen());   
+    pixel.setGreen(oldR);
+}
+
+for (var pixel of img.values()){
+    swapRG(pixel);
+}
+//run this to confirm swap print(img.getPixel(0,0));
+print(img);
