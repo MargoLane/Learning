@@ -2,7 +2,7 @@
 var fgImage = new SimpleImage("drewRobert.png");
 //set background image
 var bgImage = new SimpleImage("dinos.png");
-//define file for final image
+//define file for final imageGreen Screen
 var output = new SimpleImage(fgImage.getWidth(), fgImage.getHeight());
 
 //write code so bgImage replaces fgImage background.
