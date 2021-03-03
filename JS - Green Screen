@@ -1,0 +1,22 @@
+//set foreground (or greenscreen) image
+var fgImage = new SimpleImage("drewRobert.png");
+//set background image
+var bgImage = new SimpleImage("dinos.png");
+//define file for final image
+var output = new SimpleImage(fgImage.getWidth(), fgImage.getHeight());
+
+//write code so bgImage replaces fgImage background.
+for (var pixel of fgImage.values()) {
+    if (pixel.getGreen() > pixel.getRed() + pixel.getBlue()) {
+        //find pixel place in bgImage and then replace fgImage w/ bgImage pixel
+        var x = pixel.getX();
+        var y = pixel.getY();
+        var bgPixel = bgImage.getPixel(x,y);
+        output.setPixel(x, y, bgPixel);
+    }
+    //otherwise, leave output pixel to fgImage pixel
+    else {
+        output.setPixel(pixel.getX(), pixel.getY(), pixel);
+    }
+}
+print(output);
